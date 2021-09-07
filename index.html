@@ -19,9 +19,11 @@
 
   <header class="page-header">
     <div>
-      <img class="logo"
-        src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
-        alt="Ellen Studer Logo">
+      <a href="#intro">
+        <img class="logo"
+          src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
+          alt="Ellen Studer Logo">
+      </a>
       <img class="daisy-icon" src="img/flower.jpg" alt="">
     </div>
 
@@ -47,10 +49,10 @@
   <div class="profile">
 
     <div class="sidenav">
-      <a href="#">Projects</a> </br>
-      <a href="#">Skills</a> </br>
-      <a href="#">About</a> </br>
-      <a href="#">Contact</a> </br>
+      <a href="#projects">Projects</a> </br>
+      <a href="#skills">Skills</a> </br>
+      <a href="#about">About</a> </br>
+      <a href="#contact">Contact</a> </br>
 
       <div class="page-footer">
         <div class="social-media">
@@ -64,57 +66,100 @@
 
 
     <div class="content">
+      <div class="container">
 
-      <div class="intro">
-        <h1> Hello World! </h1>
-        <p>
-          My name is Ellen Studer. I am a <span>web</span> developer from Chicago.
-        </p>
-        <a href="#">Check out my code.</a>
-      </div>
+        <div class="intro" id="intro">
+          <h1> Hello World! </h1>
+          <p>
+            My name is Ellen Studer. I am a <span>web</span> developer from Chicago.
+          </p>
+          <a href="#">Check out my code.</a>
+        </div>
 
-      <div class="projects">
-        <h1>Projects</h1>
-        <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
-          <div class="gallery-cell"></div>
-          <div class="gallery-cell"></div>
-          <div class="gallery-cell"></div>
-          <div class="gallery-cell"></div>
-          <div class="gallery-cell"></div>
+        <div class="projects" id="projects">
+          <h1>Projects</h1>
+
+          <!-- <div class="slide-links">
+          <a href="#slide-1">1</a>
+          <a href="#slide-2">2</a>
+          <a href="#slide-3">3</a>
+          <a href="#slide-4">4</a>
+          <a href="#slide-5">5</a>
+        </div> -->
+
+          <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+          </div>
+
+        </div>
+
+        <div class="skills" id="skills">
+          <h1>Skills</h1>
+        </div>
+
+        <div class="about" id="about">
+          <h1>About me</h1>
+
+          <img src="img/ellen_studer_portrait_square.jpeg" class="profile__portrait" alt="Ellen Studer Portrait">
+
+          <div>I am an aspiring web developer with a background in data analytics.</div>
+          <div class="about-me__text">
+            <div>
+              ...To build web presences for individuals and companies who aim to make a positive impact in the world.
+              Specific causes I'm passionate about include sustainability, social justice, and minority
+              entrepreneurship.
+            </div>
+            <div>
+              My background in data analysis equipped me with a strong foundation in coding, de-bugging, and version
+              control, as well as this important insight: communicating important information in an aesthetic, visual
+              way
+              is
+              a powerful agent for change.
+            </div>
+
+            <div>
+              I am looking to combine my love of coding, desire for more creative work, and aspiration to bolster
+              powerful,
+              positive causes and ideas, through a full-stack developer position. In a workplace (or in project work) I
+              value flexibility over my time, the opportunity to collaborate with people from a variety of backgrounds,
+              and
+              opportunities to continue growing and expanding my skillset. I am primarily seeking remote work, but would
+              consider in-person positions based in New York, NY.
+            </div>
+
+            <div>
+              I offer 4 years of experience in coding for data analysis, as well as leveled-up full stack engineering
+              skills.
+            </div>
+          </div>
+
+          <p>Check out <a href="https://www.linkedin.com/in/ellenstuder/" target="_blank">my previous data experience on
+              LinkedIn</a></p>
+          <a href="#" class="button" download>Download my CV</a>
+        </div>
+
+        <div class="contact" id="contact">
+          <h1>Get in Touch</h1>
+          <div>
+            <form class="contact-form" method="post">
+
+              <div>
+                <input type="text" id="input-name" placeholder="Name">
+                <input type="email" id="input-email" placeholder="Email">
+                <textarea name="message" id="input-message" placeholder="Message"></textarea>
+              </div>
+
+              <input class="button" type="submit" value="Send message" id="input-submit">
+            </form>
+
+          </div>
         </div>
 
       </div>
-
-      <div class="skills">
-        <h1>Skills</h1>
-      </div>
-
-      <div class="about">
-        <h1>About me</h1>
-        <p>I am an aspiring web developer with a background in data analytics.</p>
-        <p>Check out <a href="https://www.linkedin.com/in/ellenstuder/" target="_blank">my previous data experience on
-            LinkedIn</a></p>
-        <a href="#" class="button" download>Download my CV</a>
-      </div>
-
-      <div class="contact">
-        <h1>Get in Touch</h1>
-        <div>
-          <form class="contact-form" method="post">
-            <div class="cf-left">
-              <input type="text" id="input-name" placeholder="Name">
-              <input type="email" id="input-email" placeholder="Email">
-            </div>
-
-            <div class="cf-right">
-              <textarea name="message" id="input-message" placeholder="Message"></textarea>
-            </div>
-
-            <input class="button" type="submit" value="Send message" id="input-submit">
-          </form>
-        </div>
-      </div>
-
     </div>
   </div>
 

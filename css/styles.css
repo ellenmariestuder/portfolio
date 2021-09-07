@@ -37,18 +37,28 @@ body {
   border: 1px solid green;
 } */
 
+.page-header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 0 15px 20px white;
+  z-index: 1;
+}
+
 .profile {
-  top: 100px;
+  /* top: 100px; */
   /* width: 500px;  */
-  width: 80%; 
+  width: 100%; 
   overflow: hidden;
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
 }
 
 .sidenav {
   height: 100%; 
-  width: 160px; 
+  width: 100px; 
   position: fixed; 
   z-index: 1; 
   top: 100px; 
@@ -56,17 +66,32 @@ body {
   /* background-color: #111; */
   overflow-x: hidden; 
   padding-top: 20px;
-  float: left;
 }
 
 .content {
-  display: inline-block;
-  padding: 100px;
+  position: absolute;
+}
+
+.container {
   top: 100px;
+  left: 150px; 
+  bottom: 50px;
+  width: 80%;
+  /* padding: 50px;  */
+  padding-left: 70px;
+  padding-right: 50px;
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+.intro {
+  padding-top: 3px;
 }
 
 .projects, .skills, .about, .contact {
   padding-top: 50px;
+  z-index: -1;
 }
 
 h1 {
@@ -133,7 +158,7 @@ button:hover, button:focus,
 
 .profile__portrait {
   float: left;
-  width: 250px;
+  width: 150px;
   margin-right: 40px;
   border-radius: 50%;
 }
@@ -153,12 +178,6 @@ button:hover, button:focus,
   flex-direction: column;
 }
 
-.page-header {
-  position: fixed;
-  width: 100%;
-  padding: 20px;
-}
-
 .page-header__item {
   flex: 0 1 200px;
 }
@@ -169,12 +188,12 @@ button:hover, button:focus,
 }
 
 .gallery {
-  background: #EEE;
+  background: white;
 }
 
 .gallery-cell {
-  width: 66%;
-  height: 200px;
+  width: 75%;
+  height: 300px;
   margin-right: 10px;
   background: #8C8;
   counter-increment: gallery-cell;
@@ -188,6 +207,15 @@ button:hover, button:focus,
   line-height: 200px;
   font-size: 80px;
   color: white;
+}
+
+.slide-links {
+  text-align: center;
+}
+
+.about-me__text {
+  padding-top: 15px;
+  color: gray;
 }
 
 
@@ -225,13 +253,6 @@ input, textarea {
 
 textarea {
   height: 116px;
-}
-
-.cf-left, .cf-right {
-  float: left;
-  width: 40%;
-  margin-bottom: 1em;
-  margin: 20px;
 }
 
 @media (max-width: 500px) {
