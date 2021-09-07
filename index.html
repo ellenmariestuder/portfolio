@@ -3,26 +3,28 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home</title>
   <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.production.css">
-  <!---<link rel="stylesheet" type="text/css" href="css/styles.css">--->
+  <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/style.production.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
 
   <header class="page-header">
     <div>
-      <img class="logo" src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png" alt="Ellen Studer Logo">
+      <img class="logo"
+        src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
+        alt="Ellen Studer Logo">
       <img class="daisy-icon" src="img/flower.jpg" alt="">
     </div>
 
-    <nav class="main-navigation page-header__item">
+    <!-- <nav class="main-navigation page-header__item">
       <ul role="menubar" class="nav-list">
         <li role="presentation">
           <a href="index.html" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
@@ -37,38 +39,118 @@
           <a href="contact.html" role="menuitem" class="nav-list__item">Contact</a>
         </li>
       </ul>
-    </nav>
+    </nav> -->
   </header>
 
+
   <div class="profile">
-    <div>
-      <!--<img src="http://via.placeholder.com/150X150" class="profile__portrait" alt="Ellen Studer Portrait" >-->
-      <img src="img/ellen_studer_portrait_square.jpeg" class="profile__portrait" alt="Ellen Studer Portrait" >
+
+    <div class="sidenav">
+      <a href="#">Projects</a> </br>
+      <a href="#">Skills</a> </br>
+      <a href="#">About</a> </br>
+      <a href="#">Contact</a> </br>
+
+      <div class="page-footer">
+        <div class="social-media">
+          <p>Find me on: </p>
+          <img src="img/linkedin_icon.svg" alt="linkedin">
+          <img src="img/github_icon.svg" alt="github">
+        </div>
+      </div>
+
     </div>
 
-    <div>
-      <h1> Hello World! </h1>
-      <p>
-        My name is Ellen Studer. I am a <span>web</span> developer from Chicago.
-      </p>
-      <a href="#">Check out my code.</a>
+
+    <div class="content">
+
+      <div class="intro">
+        <h1> Hello World! </h1>
+        <p>
+          My name is Ellen Studer. I am a <span>web</span> developer from Chicago.
+        </p>
+        <a href="#">Check out my code.</a>
+      </div>
+
+      <div class="projects">
+        <h1>Projects</h1>
+        <div class="grid">
+          <div class="grid__item">
+            <h2>Project 1</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+
+          <div class="grid__item">
+            <h2>Project 2</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+
+          <div class="grid__item">
+            <h2>Project 3</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+
+          <div class="grid__item">
+            <h2>Project 4</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+
+          <div class="grid__item">
+            <h2>Project 5</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+
+          <div class="grid__item">
+            <h2>Project 6</h2>
+            <p> *describe project* </p>
+            <a href="#">See project on GitHub</a>
+          </div>
+        </div>
+
+        <div class="skills">
+          <h1>Skills</h1>
+        </div>
+
+        <div class="about">
+          <h1>About me</h1>
+          <p>I am an aspiring web developer with a background in data analytics.</p>
+          <p>Check out <a href="https://www.linkedin.com/in/ellenstuder/" target="_blank">my previous data experience on
+              LinkedIn</a></p>
+          <a href="#" class="button" download>Download my CV</a>
+        </div>
+
+        <div class="contact">
+          <h1>Get in Touch</h1>
+          <div>
+            <form class="contact-form" method="post">
+              <div class="cf-left">
+                <input type="text" id="input-name" placeholder="Name">
+                <input type="email" id="input-email" placeholder="Email">
+              </div>
+
+              <div class="cf-right">
+                <textarea name="message" id="input-message" placeholder="Message"></textarea>
+              </div>
+
+              <input class="button" type="submit" value="Send message" id="input-submit">
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-  <br>
-  <br>
+    <br>
+    <br>
 
-  <footer class="page-footer">
-    <p>Find me on</p>
-    <div class="social-media">
-      <!-- add links-->
-      <img src="img/linkedin_icon.svg" alt="linkedin" >
-      <img src="img/github_icon.svg" alt="github" >
-      <img src="img/twitter_icon.svg" alt="twitter" >
-    </div>
-  </footer>
 
-  <script src="js/tota11y.min.js"></script>
+    <script src="js/tota11y.min.js"></script>
 
 </body>
+
 </html>

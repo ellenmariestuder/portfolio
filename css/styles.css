@@ -33,6 +33,42 @@ body {
   line-height: 1.6;
 }
 
+/* div {
+  border: 1px solid green;
+} */
+
+.profile {
+  top: 100px;
+  /* width: 500px;  */
+  width: 80%; 
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sidenav {
+  height: 100%; 
+  width: 160px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 100px; 
+  left: 50px;
+  /* background-color: #111; */
+  overflow-x: hidden; 
+  padding-top: 20px;
+  float: left;
+}
+
+.content {
+  display: inline-block;
+  padding: 100px;
+  top: 100px;
+}
+
+.projects, .skills, .about, .contact {
+  padding-top: 50px;
+}
+
 h1 {
   font-size: 30px;
   font-weight: var(--h-font-weight);
@@ -111,23 +147,14 @@ button:hover, button:focus,
 }
 
 .page-footer {
+  padding-top: 10px;
   clear: both;
   display: flex;
   flex-direction: column;
-  text-align: center;
-}
-
-.profile, .about, .contact {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about, .contact-links {
-  text-align: center;
 }
 
 .page-header {
-  display: flex;
+  position: fixed;
   width: 100%;
   padding: 20px;
 }
@@ -251,10 +278,10 @@ textarea {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 }
 
 .daisy-icon {
-  animation: 15s spin infinite alternate linear;
+  animation: 15s spin infinite linear;
 }
