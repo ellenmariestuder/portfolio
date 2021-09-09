@@ -8,7 +8,8 @@
   <title>Home</title>
   <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=OpenSans:wght@400;700&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
   <!-- <link rel="stylesheet" type="text/css" href="css/style.production.css"> -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -19,8 +20,8 @@
 
   <header class="page-header">
     <div>
-      <a href="#intro">
-        <img class="logo"
+      <a id="img-link" href="#intro">
+        <img id="img-link" class="logo"
           src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
           alt="Ellen Studer Logo">
       </a>
@@ -49,16 +50,23 @@
   <div class="profile">
 
     <div class="sidenav">
-      <a href="#projects">Projects</a> </br>
-      <a href="#skills">Skills</a> </br>
-      <a href="#about">About</a> </br>
-      <a href="#contact">Contact</a> </br>
+      <a href="#projects" class="button nav-link">Projects</a> </br>
+      <a href="#skills" class="button nav-link">Skills</a> </br>
+      <a href="#about" class="button nav-link">About</a> </br>
+      <a href="#contact" class="button nav-link">Contact</a> </br>
 
       <div class="page-footer">
         <div class="social-media">
           <p>Find me on: </p>
-          <img src="img/linkedin_icon.svg" alt="linkedin">
-          <img src="img/github_icon.svg" alt="github">
+          <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
+            <img id="img-link" src="img/linkedin_icon.svg" alt="linkedin">
+          </a>
+          <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
+            <img id="img-link" src="img/github_icon.svg" alt="github">
+          </a>
+          <!-- <a id="img-link" href="mailto:ellenmstuder@gmail.com" target="_blank">
+            <img id="img-link" src="img/email_icon.png" alt="email">
+          </a> -->
         </div>
       </div>
 
@@ -99,6 +107,44 @@
 
         <div class="skills" id="skills">
           <h1>Skills</h1>
+          <div class="grid">
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/html.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/css.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/javascript.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/react.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/bootstrap.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/node.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/expressjs.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/mongodb.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/sql.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/github.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/vscode.png" alt="">
+            </div>
+            <div class="grid__item">
+              <img class="skill_img" src="img/icon/atom.png" alt="">
+            </div>
+          </div>
         </div>
 
         <div class="about" id="about">
@@ -108,12 +154,12 @@
 
           <div>I am an aspiring web developer with a background in data analytics.</div>
           <div class="about-me__text">
-            <div>
+            <div class="about-text">
               ...To build web presences for individuals and companies who aim to make a positive impact in the world.
               Specific causes I'm passionate about include sustainability, social justice, and minority
               entrepreneurship.
             </div>
-            <div>
+            <div class="about-text">
               My background in data analysis equipped me with a strong foundation in coding, de-bugging, and version
               control, as well as this important insight: communicating important information in an aesthetic, visual
               way
@@ -121,7 +167,7 @@
               a powerful agent for change.
             </div>
 
-            <div>
+            <div class="about-text">
               I am looking to combine my love of coding, desire for more creative work, and aspiration to bolster
               powerful,
               positive causes and ideas, through a full-stack developer position. In a workplace (or in project work) I
@@ -131,15 +177,14 @@
               consider in-person positions based in New York, NY.
             </div>
 
-            <div>
+            <div class="about-text">
               I offer 4 years of experience in coding for data analysis, as well as leveled-up full stack engineering
               skills.
             </div>
           </div>
-
-          <p>Check out <a href="https://www.linkedin.com/in/ellenstuder/" target="_blank">my previous data experience on
-              LinkedIn</a></p>
-          <a href="#" class="button" download>Download my CV</a>
+          <!-- <div class="about-text">
+            <a href="#" class="button" download>Download my CV</a>
+          </div> -->
         </div>
 
         <div class="contact" id="contact">

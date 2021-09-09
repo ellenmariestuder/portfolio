@@ -18,6 +18,7 @@ contrasting color (turquiose): #00b598
   --light-grey: lightgrey;
   --text-color-1: white;
   --h-font-weight: 700;
+  --h-font-style: italic;
   --button-borders: 3px; /* i feel like this one is unnecessary, but doing just in case */
 }
 
@@ -91,12 +92,18 @@ body {
 
 .projects, .skills, .about, .contact {
   padding-top: 50px;
+  padding-bottom: 50px;
   z-index: -1;
+}
+
+#img-link {
+  text-decoration: none !important;
 }
 
 h1 {
   font-size: 30px;
   font-weight: var(--h-font-weight);
+  font-style: var(--h-font-style);
 }
 
 h2 {
@@ -127,6 +134,12 @@ a:active {
   color: var(--secondary-color);
 }
 
+.nav-link {
+  margin: 5px;
+  width: 80px;
+}
+
+/* reference: https://codepen.io/brownerd/pen/vwfJA */
 button,
 .button  {
   border: none;
@@ -135,19 +148,22 @@ button,
   background-color: var(--primary-color);
   color: var(--text-color-1);
   text-decoration: none;
-  padding: 10px;
-  border-radius: var(--button-borders);
-  border-bottom: var(--button-borders) solid rgba(0, 0, 0, 0.4);
+  /* padding: 10px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  transform: skew(-20deg);
+  /* border-radius: var(--button-borders);
+  border-bottom: var(--button-borders) solid rgba(0, 0, 0, 0.4); */
   transition: opacity 0.5s;
   /*transition-duration: 0.5s;
   transition-property: opacity;
   border-bottom: 4px solid #007a79;*/
 }
 
-.button__secondary {
+/* .button__secondary {
   background-color: var(--contrasting-color);
   color: var(--text-color-1);
-}
+} */
 
 button:hover, button:focus,
 .button:hover,
@@ -218,6 +234,9 @@ button:hover, button:focus,
   color: gray;
 }
 
+.about-text {
+  padding: 5px; 
+}
 
 .nav-list {
   list-style-type: none;
@@ -248,10 +267,14 @@ input, textarea {
   cursor: pointer;
   width: 85%;
   margin: 20px;
+  border-radius: 0px;
   box-shadow: none;
+  padding: 5px;
+  font: inherit;
 }
 
 textarea {
+  font: inherit;
   height: 116px;
 }
 
@@ -263,48 +286,49 @@ textarea {
   }
 }
 
-.grid__item {
-  background-color: var(--light-grey);
-  display: inline-block;
-  width: 33%;
-}
-
 @supports (display: grid) {
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
   }
-
+  
   .grid__item {
-    background-color: var(--light-grey);
-    width: auto;
-    min-height: auto;
+    /* background-color: var(--light-grey);  */
+    /* width: auto; */
+    /* min-height: auto;  */
+    max-height: 100px;
+    max-width: 100px;
     margin: 0;
     padding: 10px;
   }
-
-  .grid__item:last-child {
+  
+  .skill_img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+   /* .grid__item:last-child {
     grid-column: 3/3;
     grid-row: 1/3;
-  }
+  }  */
 }
 
 
-@media all and (min-width: 500px) and (max-width: 750px) {
+/* @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
-}
+} */
 
-@media all and (max-width: 500px) {
+/* @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
   }
-}
+} */
 
-@media all and (max-width: 750px) {
+/* @media all and (max-width: 750px) {
   .grid {
     grid-gap: 10px;
   }
@@ -315,7 +339,7 @@ textarea {
   h1 {
     font-size: 22px;
   }
-}
+} */
 
 @keyframes spin {
   from {
