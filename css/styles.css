@@ -12,8 +12,8 @@ contrasting color (turquiose): #00b598
 
 :root {
   --primary-color: #f48205;
-  --secondary-color: #ff5100;
-  --contrasting-color: #00b598;
+  --secondary-color: rgb(255, 81, 0);
+  --contrasting-color: #6fcf40;
   --dark-grey: #2b2b2b;
   --light-grey: lightgrey;
   --text-color-1: white;
@@ -160,10 +160,18 @@ button,
   border-bottom: 4px solid #007a79;*/
 }
 
-/* .button__secondary {
+.button__secondary {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
   background-color: var(--contrasting-color);
   color: var(--text-color-1);
-} */
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  transform: skew(-20deg);
+  transition: opacity 0.5s;
+}
 
 button:hover, button:focus,
 .button:hover,
@@ -209,20 +217,43 @@ button:hover, button:focus,
 
 .gallery-cell {
   width: 75%;
-  height: 300px;
+  height: 450px; 
   margin-right: 10px;
-  background: #8C8;
-  counter-increment: gallery-cell;
+  /* background: #8C8; */
+  border: 1px solid var(--contrasting-color);
+  /* counter-increment: gallery-cell; */
 }
 
 /* cell number */
 .gallery-cell:before {
   display: block;
   text-align: center;
-  content: counter(gallery-cell);
+  /* content: counter(gallery-cell); */
   line-height: 200px;
   font-size: 80px;
   color: white;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* border: 5px ridge blue */
+}
+
+.project {
+  text-align: center;
+  margin: 0 auto;
+  max-height: 350px;
+  max-width: 300px;
+  /* width: 90%; */
+}
+
+.proj-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: 20px;
 }
 
 .slide-links {
@@ -231,11 +262,14 @@ button:hover, button:focus,
 
 .about-me__text {
   padding-top: 15px;
-  color: gray;
 }
 
 .about-text {
   padding: 5px; 
+}
+
+.hide {
+  display: none;
 }
 
 .nav-list {
@@ -252,6 +286,11 @@ button:hover, button:focus,
 }
 
 /* contact form borrowed/adapted from: https://codepen.io/markmurray/pen/JsAhx/ */
+.contact-form {
+  width: 70%;
+  margin: 0 auto;
+}
+
 input, textarea {
   border: 0; outline: 0;
   padding: 1em;
