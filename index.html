@@ -19,16 +19,24 @@
 <body>
 
   <header class="page-header">
-    <div>
-      <a id="img-link" href="#intro">
-        <img id="img-link" class="logo"
-          src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
-          alt="Ellen Studer Logo">
-      </a>
-      <img class="daisy-icon" src="img/flower.jpg" alt="">
-    </div>
+    <nav class="navbar">
+      <div class="logo-icon">
+        <a id="img-link" href="#intro">
+          <img id="img-link" class="logo"
+            src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
+            alt="Ellen Studer Logo">
+        </a>
+        <img class="daisy-icon" src="img/flower.jpg" alt="">
 
-    <!-- <nav class="main-navigation page-header__item">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+      </div>
+
+      <!-- <nav class="main-navigation page-header__item">
       <ul role="menubar" class="nav-list">
         <li role="presentation">
           <a href="index.html" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
@@ -44,16 +52,21 @@
         </li>
       </ul>
     </nav> -->
-  </header>
 
-
-  <div class="profile">
-
-    <div class="sidenav">
-      <a href="#projects" class="button nav-link">Projects</a> </br>
-      <a href="#skills" class="button nav-link">Skills</a> </br>
-      <a href="#about" class="button nav-link">About</a> </br>
-      <a href="#contact" class="button nav-link">Contact</a> </br>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#projects" class="button nav-link">Projects</a> </br>
+        </li>
+        <li class="nav-item">
+          <a href="#skills" class="button nav-link">Skills</a> </br>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="button nav-link">About</a> </br>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="button nav-link">Contact</a> </br>
+        </li>
+      </ul>
 
       <div class="page-footer">
         <div class="social-media">
@@ -64,14 +77,14 @@
           <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
             <img id="img-link" src="img/github_icon.svg" alt="github">
           </a>
-          <!-- <a id="img-link" href="mailto:ellenmstuder@gmail.com" target="_blank">
-            <img id="img-link" src="img/email_icon.png" alt="email">
-          </a> -->
         </div>
       </div>
 
-    </div>
+    </nav>
+  </header>
 
+
+  <div class="profile">
 
     <div class="content">
       <div class="container">
@@ -165,26 +178,19 @@
           <div class="about-me__text">
 
             <div class="about-text">
-              This background equipped me with a strong foundation in coding, de-bugging, and version control. As a
-              policy research analyst, I produced study results that had lasting impacts for communities and
-              stakeholders. Given the stakes of my work product, I have developed a methodical and meticulous approach
-              to
-              coding; Making sure the final product that I share is precise, reliable, and easy for people to understand
-              and engage with.
-            </div>
-
-            <div class="about-text hide">
-              I completed CareerFoundry's Full Stack Web Development bootcamp in June 2020. During my time at the
-              bootcamp, I spent upwards of 30 hours a week for 8 months learning web development, along side my full
-              time job at JMU. The course started from the basics of HTML and CSS all the way to a full stack web
-              application using Node.js, building an API, and MongoDB backend with a React and Bootstrap UI frontend. My
-              projects are located above, please take a look. With my years of coding experience prior to this course
-              and my current knowledge of web development, I can offer a large array of skills to any project.
+              I am completing CareerFoundry’s Full Stack Web Development bootcamp (projected finish: November 2021),
+              through which I have mastered the fundamentals of HTML, CSS, JavaScript, and React. As part of this
+              program I have built several web apps, including a full stack web application that involved using Node.js,
+              building an API, a MongoDB backend, and a React/ Bootstrap frontend. This and other projects are displayed
+              above-- please take a look!
             </div>
 
             <div class="about-text">
-              I am looking to combine my love of coding, desire for more creative work, and aspiration to bolster
-              positive causes, through a full-stack developer position.
+              I have completed this program while working full-time as a Senior Research Analyst at the University of
+              Chicago, dedicating ~25 hours per week over 8 months to learning web development on top of my full-time
+              duties. My background as a research analyst has equipped me with a strong foundation in coding,
+              de-bugging, and version control. I am looking to combine my love of coding, desire for more creative work,
+              and aspiration to bolster positive causes, through a full-stack developer position.
             </div>
 
             <div class="about-text">
@@ -222,11 +228,10 @@
   <br>
   <br>
 
-
-  <script src="js/tota11y.min.js"></script>
-  <script src="js/flickity.pkgd.min.js"></script>
-
-
 </body>
+
+<script src="js/tota11y.min.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/hamburger.js"></script>
 
 </html>
