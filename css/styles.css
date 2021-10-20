@@ -19,7 +19,6 @@ contrasting color (turquiose): #00b598
   --text-color-1: white;
   --h-font-weight: 700;
   --h-font-style: italic;
-  --button-borders: 3px; /* i feel like this one is unnecessary, but doing just in case */
 }
 
 * {
@@ -72,9 +71,6 @@ body {
   left: 5px;
   text-align: left;
   padding-top: 20px;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
 }
 
 .content {
@@ -224,15 +220,6 @@ button:hover, button:focus,
   padding-left: 15px;
 }
 
-/* .page-header__item {
-  flex: 0 1 200px;
-} 
-
-.page-header__item:last-child {
-  flex-grow: 1;
-  text-align: right;
-} */
-
 .gallery {
   background: white;
 }
@@ -284,7 +271,7 @@ button:hover, button:focus,
 }
 
 .about-me__text {
-  padding-top: 15px;
+  padding-top: 7px;
 }
 
 .about-text {
@@ -312,7 +299,11 @@ li {
   text-decoration: none;
 }
 
-/* contact form borrowed/adapted from: https://codepen.io/markmurray/pen/JsAhx/ */
+.about-text__responsive {
+  display: none;
+}
+
+/* contact form adapted from: https://codepen.io/markmurray/pen/JsAhx/ */
 .contact-form {
   width: 70%;
   margin: 0 auto;
@@ -344,18 +335,37 @@ textarea {
   height: 116px;
 }
 
-@media only screen and (max-width: 768px) {
-  /* .img-link {
-    width: 80%;
-  } */
+/* responsive hamburger menu adapted from: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci */
+@media only screen and (max-width: 700px) {
+  .logo, .logo-icon {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .hamburger_container {
+    display: flex;
+    margin-right: auto;
+    padding-right: 20px;
+  }
+ 
+  .page-header, .navbar {
+    padding: 0;
+  }
+  
+  .page-header {
+    margin-top: 35px;
+  }
 
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 5rem;
+    /* top: 5rem; */
     flex-direction: column;
-    background-color: #fff;
+    /* background-color: rgba(76, 175, 80, 0.5); */
+    background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
+    height: 35%; 
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
@@ -368,7 +378,7 @@ textarea {
   }
   
   .nav-item {
-    margin: 2.5rem 0;
+    margin: 15px;
   }
   
   .hamburger {
@@ -378,12 +388,14 @@ textarea {
     padding: 10px;
     cursor: pointer;
   }
+
   
   .container {
-    top: 130px;
+    top: 100px;
     left: 0px; 
     bottom: 50px;
     width: 100%;
+    padding: 20px;
   }
   
   .profile__portrait {
@@ -410,6 +422,15 @@ textarea {
 
   .page-footer {
     display: none;
+  }
+
+  .about-text {
+    display: none;
+  }
+
+  .about-text__responsive {
+    display: block;
+    padding-bottom: 10px;
   }
 }
 
