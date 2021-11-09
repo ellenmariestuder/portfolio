@@ -265,15 +265,17 @@ button:hover, button:focus,
   /* width: 90%; */
 }
 
-.grid__item-proj p{
-  height: 90px;
+.proj-description {
+  height: 50px;
 }
 
 .img-container {
-  height: 200px;
+  height: 150px;
   text-align: center;
   align-items: center;
-  vertical-align: middle;
+  /* vertical-align: middle; */
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .proj-img {
@@ -284,6 +286,15 @@ button:hover, button:focus,
 
 .proj-links {
   text-align: center;
+}
+
+/* .proj-links p {
+  padding: 0px;
+  margin: 0px;
+} */
+
+.proj-links a {
+  padding: 10px;
 }
 
 .about-me__text {
