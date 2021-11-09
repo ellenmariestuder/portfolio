@@ -44,9 +44,9 @@ function hideNonVisibleDivs() {
     if (visibleDivId === divId) {
       div.style.cssText = `
       display: block;
-      transition-duration: 2s;
-      transition-property: width;
-      transition-timing-function: ease-out;
+      // transition-duration: 2s;
+      // transition-property: width;
+      // transition-timing-function: ease-out;
       `;
       // div.style.cssText = `
       // margin-left: 200px;

@@ -147,6 +147,8 @@ body {
 
 #img-link {
   text-decoration: none !important;
+  /* width: 150%;
+  height: 150%; */
 }
 
 h1 {
@@ -180,9 +182,9 @@ a:visited {
 }
 */
 
-a:active {
+/* a:active {
   color: var(--secondary-color);
-}
+} */
 
 .nav-link {
   margin: 50px;
@@ -269,15 +271,19 @@ button:hover, button:focus,
 
 .img-container {
   height: 200px;
+  text-align: center;
   align-items: center;
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 .proj-img {
+  object-fit: contain;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
-  /* margin: 20px; */
+}
+
+.proj-links {
+  text-align: center;
 }
 
 .about-me__text {
@@ -309,9 +315,9 @@ li {
   color: blue;
 }
 
-/* a.nav-link--active {
+a.nav-link--active {
   color: blue;
-} */
+}
 
 .about-text {
   display: none;
