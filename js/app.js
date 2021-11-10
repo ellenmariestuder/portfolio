@@ -54,7 +54,7 @@ function hideNonVisibleDivs() {
       // transition-property: width;
       // transition-timing-function: ease-out;
       // `;
-
+      
     } else {
       // div.style.marginLeft = "-5000px";
       div.style.display = "none";
@@ -62,6 +62,18 @@ function hideNonVisibleDivs() {
   }
 }
 
+////////////////////////////////////////////////////////////////////////
+// if all sections are hidden (per the above), apply 'bouncy' class/
+// animation to nav-link items
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
 // carousel where margin between images is enough to push section off screen
 // opacity 0 -> opacity 100
 
