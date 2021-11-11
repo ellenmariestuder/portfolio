@@ -26,7 +26,6 @@ contrasting color (turquiose): #00b598
 }
 
 body {
-  /*background-color: #eff1f6;*/
   font-family: 'Karla', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -237,6 +236,8 @@ a:hover, a:focus {
   -ms-transition:     color 1s;
   -o-transition:      color 1s;
   transition:         color 1s;
+
+  /* gradually increase fontsize (on click) */
   transition: font-size 1s;
 }
 
@@ -249,38 +250,9 @@ a:hover, a:focus {
 }
 
 .page-footer {
-  /* position: fixed; */
   margin-top: 40px;
   margin-left: 60px;
 }
-
-/* reference: https://codepen.io/brownerd/pen/vwfJA */
-/* button,
-.button  { */
-  /* border: none;
-  display: inline-block;
-  font-family: inherit;
-  background-color: var(--primary-color);
-  color: var(--text-color-1);
-  text-decoration: none; */
-  /* padding: 10px; */
-  /* padding-left: 10px;
-  padding-right: 10px;
-  transform: skew(-20deg); */
-  /* border-radius: var(--button-borders);
-  border-bottom: var(--button-borders) solid rgba(0, 0, 0, 0.4); */
-  /* transition: opacity 0.5s; */
-  /*transition-duration: 0.5s;
-  transition-property: opacity;
-  border-bottom: 4px solid #007a79;*/
-/* } */
-
-/* button:hover, button:focus,
-.button:hover,
-.button:focus {
-  cursor: pointer;
-  opacity: 0.8;
-} */
 
 .profile__portrait {
   float: left;
@@ -307,7 +279,6 @@ a:hover, a:focus {
   height: 250px;
   text-align: center;
   align-items: center;
-  /* vertical-align: middle; */
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -323,13 +294,7 @@ a:hover, a:focus {
   text-align: center;
 }
 
-/* .proj-links p {
-  padding: 0px;
-  margin: 0px;
-} */
-
 #input-submit, .button, .proj-links a {
-  /* padding: 10px; */
   display:inline-block;
   padding:0.3em 1.2em;
   margin:0 0.3em 0.3em 0;
@@ -351,10 +316,6 @@ a:hover, a:focus {
 .about-me__text {
   padding-top: 7px;
 }
-
-/* .about-text {
-  padding: 5px; 
-} */
 
 .hide {
   display: none;
