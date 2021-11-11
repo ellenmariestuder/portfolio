@@ -33,6 +33,32 @@ body {
   line-height: 1.6;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  /* overflow:hidden; */
+}
+
+#reset {
+  position: absolute;
+  left:50%;
+  top:10px;
+  margin-left:-400px;
+  background: #444;
+  border: 1px solid #555;
+  color: #888;
+  padding: 6px 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#c {
+  width:800px;
+  height:376px;
+  margin:0 auto;
+  display:block;
+}
+
 /* div {
   border: 1px solid green;
 } */
@@ -121,7 +147,6 @@ body {
   height: 100%; 
   width: auto; 
   position: fixed; 
-  z-index: 1; 
   top: 100px; 
   left: 5px;
   text-align: left;
@@ -130,18 +155,20 @@ body {
 
 .content {
   position: absolute;
+  /* z-index: 1; */
 }
 
 .container {
-  top: 130px;
+  top: 135px;
   left: 150px; 
   bottom: 50px;
   width: 80%;
   /* padding: 50px;  */
   padding-left: 70px;
   padding-right: 50px;
-  position:fixed;
+  position: fixed;
   overflow-y: scroll;
+  /* z-index: 1; */
   /* overflow: hidden; */
 }
 
@@ -153,7 +180,7 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   margin-left: 200px;
-  z-index: -1;
+  /* z-index: 1; */
   display: none;
   /* margin-left: -5000px;  */
   /* overflow-y: scroll; */
@@ -195,22 +222,16 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
-/*
-a:visited {
-  color: var(--contrasting-color);
+.active {
+  color: pink;
 }
-*/
-
-/* a:active {
-  color: var(--secondary-color);
-} */
 
 .nav-link {
   margin: 50px;
   width: 80px;
   text-decoration: none;
   font-size: 60px;
-  color: #101010;
+  /* color: #101010; */
   font-weight: 700;
 }
 
@@ -265,8 +286,8 @@ a:visited {
 
 .proj-description {
   height: 50px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .img-container {
@@ -338,14 +359,6 @@ li {
   display: inline-block;
   margin-left: 15px;
 }
-
-/* .nav-item--active {
-  color: blue;
-}
-
-a.nav-link--active {
-  color: blue;
-} */
 
 .about-text {
   display: none;
