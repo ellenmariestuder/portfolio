@@ -30,8 +30,7 @@ var navLinks = document.querySelectorAll(".nav-link");
 
 function toggleVisibility(divId) {
   // identify navLink clicked on 
-  console.log(window.event.target.id);
-  navId = window.event.target.id;
+  navId = document.getElementById(window.event.target.id);
   // add 'active' class to that navLink; remove it from all others 
   setActiveClass(navId);
 
@@ -89,17 +88,6 @@ function hideNonVisibleDivs() {
     }
   }
 }
-
-////////////////////////////////////////////////////////////////////////
-// if all sections are hidden (per the above), apply 'bouncy' class/
-// animation to nav-link items
-
-// 1. while loop
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////

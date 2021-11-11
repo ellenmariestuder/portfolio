@@ -222,17 +222,30 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
-.active {
-  color: pink;
-}
 
 .nav-link {
   margin: 50px;
   width: 80px;
   text-decoration: none;
   font-size: 60px;
-  /* color: #101010; */
+  color: lightgrey;
   font-weight: 700;
+
+  /* gradually change color (on click) */
+  -webkit-transition: color 1s;
+  -moz-transition:    color 1s;
+  -ms-transition:     color 1s;
+  -o-transition:      color 1s;
+  transition:         color 1s;
+  transition: font-size 1s;
+}
+
+.active {
+  color: #101010;
+  /* scale active item */
+  font-size: 40px;
+  transition: font-size 1s;
+
 }
 
 .page-footer {
