@@ -246,7 +246,7 @@ a:hover, a:focus {
 
 .profile__portrait {
   float: left;
-  width: 150px;
+  width: 200px;
   margin-right: 40px;
   border-radius: 50%;
 }
