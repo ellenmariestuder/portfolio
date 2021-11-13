@@ -175,6 +175,7 @@ body {
 
 #img-link {
   text-decoration: none !important;
+
 }
 
 .projects, .skills, .about, .contact {
@@ -236,12 +237,20 @@ a:hover, a:focus {
   /* scale active item */
   font-size: 75px;
   transition: font-size 1s;
-
 }
 
 .page-footer {
   margin-top: 40px;
-  margin-left: 60px;
+}
+
+.icon-linkedin {
+  padding-left: 20px;
+  height: 55px;
+}
+
+.icon-github {
+  padding-left: 10px;
+  height: 48px;
 }
 
 .profile__portrait {
@@ -382,6 +391,14 @@ textarea {
     margin-left: 15px;
   }
 
+  .nav-link {
+    font-size: 50px;
+  }
+
+  .active {
+    font-size: 60px;
+  }
+
   .contact-form {
     padding-top: 20px;
     padding-left: 20px;
@@ -407,8 +424,11 @@ textarea {
   }
 
   .nav-link {
+    font-size: 40px;
+  }
+
+  .active {
     font-size: 50px;
-    font-weight: 700;
   }
   
   .page-header {
@@ -442,12 +462,14 @@ textarea {
     margin-top: 70px;
     margin-left: 10px;
   }
-
-  .nav-link {
-    font-size: 40px;
-    font-weight: 700;
-  }
   
+  .nav-link {
+    font-size: 30px;
+  }
+
+  .active {
+    font-size: 40px;
+  }
   .page-header {
     margin-top: 20px;
   }
