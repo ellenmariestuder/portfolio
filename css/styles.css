@@ -234,7 +234,7 @@ a:hover, a:focus {
 .active {
   color: #101010;
   /* scale active item */
-  font-size: 45px;
+  font-size: 75px;
   transition: font-size 1s;
 
 }
@@ -347,7 +347,9 @@ li {
 
 /* contact form adapted from: https://codepen.io/markmurray/pen/JsAhx/ */
 .contact-form { 
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 input, textarea {
@@ -378,6 +380,12 @@ textarea {
   .page-header, .page-footer, .navbar, .nav-menu, .nav-item, .nav-link, .nav-list li {
     padding-left: 0px;
     margin-left: 15px;
+  }
+
+  .contact-form {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
