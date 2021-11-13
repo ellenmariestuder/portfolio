@@ -167,6 +167,7 @@ body {
   position: fixed;
   overflow-y: auto;
   /* z-index: 1; */
+
 }
 
 .intro {
@@ -244,7 +245,7 @@ a:hover, a:focus {
 }
 
 .icon-linkedin {
-  padding-left: 20px;
+  padding-left: 50px;
   height: 55px;
 }
 
@@ -390,13 +391,27 @@ textarea {
     padding-left: 0px;
     margin-left: 15px;
   }
-
+  
   .nav-link {
     font-size: 50px;
   }
-
+  
   .active {
     font-size: 60px;
+  }
+  
+  .page-footer {
+     margin-top: 20px;
+   }
+
+  .icon-linkedin {
+    padding-left: 20px;
+    height: 50px;
+  }
+  
+  .icon-github {
+    padding-left: 7px;
+    height: 43px;
   }
 
   .contact-form {
@@ -417,6 +432,10 @@ textarea {
     padding: 0px;
     margin-left: 10px;
   }
+  
+  .page-header {
+    margin-top: 20px;
+  }
 
   .nav-menu {
     margin-top: 70px;
@@ -430,10 +449,20 @@ textarea {
   .active {
     font-size: 50px;
   }
-  
-  .page-header {
-    margin-top: 20px;
+
+  .page-footer {
+    margin-top: 15px;
   }
+
+ .icon-linkedin {
+   padding-left: 15px;
+   height: 46px;
+ }
+ 
+ .icon-github {
+   padding-left: 7px;
+   height: 39px;
+ }
  
   .container {
     left: 50px;
@@ -457,6 +486,10 @@ textarea {
     padding: 0px;
     margin-left: 0px;
   }
+  
+  .page-header {
+    margin-top: 20px;
+  }
 
   .nav-menu {
     margin-top: 70px;
@@ -470,10 +503,21 @@ textarea {
   .active {
     font-size: 40px;
   }
-  .page-header {
-    margin-top: 20px;
-  }
  
+  .page-footer {
+    margin-top: 10px;
+  }
+
+ .icon-linkedin {
+   padding-left: 5px;
+   height: 40px;
+ }
+ 
+ .icon-github {
+   padding-left: 5px;
+   height: 32px;
+ }
+
   .container {
     top: 110px;
     left: 0px; 
