@@ -252,19 +252,20 @@ a:hover, a:focus {
   position: relative;
 } */
 
-/* .icon-linkedin {
+.icon-linkedin {
   padding-left: 50px;
-  height: 55px;
+  height: 60px;
 }
 
 .icon-github {
   padding-left: 10px;
-  height: 48px;
-} */
+  height: 60px;
+}
 
 .icon-twitter {
-  height: 33px;
-  margin-bottom: 16px;
+  padding-left: 10px;
+  height: 55px;
+  /* margin-bottom: 2px; */
 }
 
 .profile__portrait {
@@ -424,7 +425,16 @@ textarea {
   
   .icon-github {
     padding-left: 7px;
-    height: 43px;
+    height: 50px;
+  }
+
+  .icon-twitter {
+    padding-left: 7px;
+    height: 47px;
+  }
+
+  .img-container {
+    height: 200px;
   }
 
   .contact-form {
@@ -469,12 +479,17 @@ textarea {
 
  .icon-linkedin {
    padding-left: 15px;
-   height: 46px;
+   height: 41px;
  }
  
  .icon-github {
    padding-left: 7px;
-   height: 39px;
+   height: 41px;
+ }
+ 
+ .icon-twitter {
+   height: 37px;
+   margin-bottom: 1px;
  }
  
   .container {
@@ -539,10 +554,14 @@ textarea {
     margin-top: 10px;
   }
 
- .icon-linkedin, .icon-github {
+ .icon-linkedin, .icon-github, .icon-twitter {
    padding-left: 0px;
    height: 37px;
    margin-bottom: 15px;
+ }
+
+ .icon-twitter {
+   height: 34px;
  }
 
  .img-container {
