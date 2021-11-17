@@ -180,7 +180,6 @@ body {
 
 #img-link {
   text-decoration: none !important;
-
 }
 
 .projects, .skills, .about, .contact {
@@ -253,7 +252,7 @@ a:hover, a:focus {
   position: relative;
 } */
 
-.icon-linkedin {
+/* .icon-linkedin {
   padding-left: 50px;
   height: 55px;
 }
@@ -261,6 +260,11 @@ a:hover, a:focus {
 .icon-github {
   padding-left: 10px;
   height: 48px;
+} */
+
+.icon-twitter {
+  height: 39px;
+  margin-bottom: 14px;
 }
 
 .profile__portrait {
@@ -496,6 +500,10 @@ textarea {
     margin-left: 0px;
   }
   
+  h1 {
+    font-size: 25px;
+  }
+
   .page-header {
     margin-top: 20px;
   }
@@ -507,10 +515,16 @@ textarea {
   .mobile {
     display: block;
   }
-
+  
   .nav-menu {
+    height: auto;
+    max-height: 75%;
+    overflow-y: auto;
+
+    width: 100%;
     margin-top: 70px;
     margin-left: 10px;
+    padding-right: 20px;
   }
   
   .nav-link {
@@ -520,30 +534,27 @@ textarea {
   .active {
     font-size: 40px;
   }
- 
+
   .page-footer {
     margin-top: 10px;
   }
 
- .icon-linkedin {
-   padding-left: 5px;
-   height: 40px;
+ .icon-linkedin, .icon-github {
+   padding-left: 0px;
+   height: 37px;
+   margin-bottom: 15px;
  }
- 
- .icon-github {
-   padding-left: 5px;
-   height: 32px;
- }
-
-  .container {
-    top: 110px;
-    left: 0px; 
-    width: 100%;
-    padding: 20px;
-  }
-  
+   
   .profile__portrait {
     display: none;
+  }
+}
+
+@media only screen and (min-device-height: 812px) and (max-device-height: 823px) {
+  .nav-menu {
+    height: auto;
+    max-height: 80%;
+    overflow-y: auto;
   }
 }
 
