@@ -263,8 +263,8 @@ a:hover, a:focus {
 } */
 
 .icon-twitter {
-  height: 39px;
-  margin-bottom: 14px;
+  height: 33px;
+  margin-bottom: 16px;
 }
 
 .profile__portrait {
@@ -544,6 +544,14 @@ textarea {
    height: 37px;
    margin-bottom: 15px;
  }
+
+ .img-container {
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
    
   .profile__portrait {
     display: none;
@@ -662,8 +670,8 @@ textarea {
   }
 }
 
-@media all and (max-width: 600px) {
+/* @media all and (max-width: 600px) {
   .grid-skills {
     grid-template-columns: 1fr 1fr;
   }
-}
+} */
