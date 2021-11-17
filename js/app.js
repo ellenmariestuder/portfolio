@@ -24,6 +24,7 @@ let letter = '';
 // show/ hide content to right of menu on button click 
 // (for desktop-size screens)
 var divs = ["projects", "skills", "about", "contact"];
+var divsAcc = ["projects-acc", "skills-acc", "about-acc", "contact-acc"];
 var visibleDivId = null;
 var styles
 var navLinks = document.querySelectorAll(".nav-link");
@@ -51,7 +52,13 @@ function toggleVisibility(divId) {
       element.classList.remove("bouncy");
     });
   }
-  hideNonVisibleDivs();
+
+  const mediaQuery = window.matchMedia('(max-width: 700px)')
+  if (mediaQuery.matches) {
+    hideNonVisibleDivsMobile();
+  } else {
+    hideNonVisibleDivs();
+  }
 }
 
 function setActiveClass(elem) {
@@ -84,6 +91,22 @@ function hideNonVisibleDivs() {
 
     } else {
       // div.style.marginLeft = "-5000px";
+      div.style.display = "none";
+    }
+  }
+}
+
+function hideNonVisibleDivsMobile() {
+  var i, divId, div;
+  for (i = 0; i < divsAcc.length; i++) {
+    divId = divsAcc[i];
+    div = document.getElementById(divId);
+    if (visibleDivId === divId) {
+      div.style.cssText = `
+      display: block;
+      `;
+
+    } else {
       div.style.display = "none";
     }
   }

@@ -55,40 +55,81 @@
 
     <nav class="navbar">
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#projects" class="nav-link bouncy active" id="nl-projects"
-            onclick="toggleVisibility('projects');return false;">Work
-            ></a></br>
-        </li>
-        <li class="nav-item">
-          <a href="#skills" class="nav-link bouncy active" id="nl-skills" style="animation-delay:0.07s"
-            onclick="toggleVisibility('skills');return false;">Skills ></a></br>
-        </li>
-        <li class="nav-item">
-          <a href="#about" class="nav-link bouncy active" id="nl-about" style="animation-delay:0.14s"
-            onclick="toggleVisibility('about');return false;">About ></a></br>
-        </li>
-        <li class="nav-item">
-          <a href="#contact" class="nav-link bouncy active" id="nl-contact" style="animation-delay:0.21s"
-            onclick="toggleVisibility('contact');return false;">Contact
-            ></a></br>
-        </li>
 
-        <li>
-          <div class="page-footer">
-            <div class="social-media">
-              <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
-                <img class="icon-linkedin" id="img-link" src="img/linkedin_icon.png" alt="linkedin">
-              </a>
-              <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
-                <img class="icon-github" id="img-link" src="img/github_icon.png" alt="github">
-              </a>
+        <div class="nav-menu desktop">
+          <li class="nav-item">
+            <a href="#projects" class="nav-link bouncy active" id="nl-projects"
+              onclick="toggleVisibility('projects');return false;">Work
+              ></a></br>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link bouncy active" id="nl-skills" style="animation-delay:0.07s"
+              onclick="toggleVisibility('skills');return false;">Skills ></a></br>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link bouncy active" id="nl-about" style="animation-delay:0.14s"
+              onclick="toggleVisibility('about');return false;">About ></a></br>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link bouncy active" id="nl-contact" style="animation-delay:0.21s"
+              onclick="toggleVisibility('contact');return false;">Contact
+              ></a></br>
+          </li>
+          <li>
+            <div class="page-footer">
+              <div class="social-media">
+                <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
+                  <img class="icon-linkedin" id="img-link" src="img/linkedin_icon.png" alt="linkedin">
+                </a>
+                <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
+                  <img class="icon-github" id="img-link" src="img/github_icon.png" alt="github">
+                </a>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </div>
+
+        <div class="nav-menu mobile">
+          <li class="nav-item">
+            <a href="#projects" class="nav-link bouncy active" id="nl-projects-m"
+              onclick="toggleVisibility('projects-acc');return false;">Work
+              ></a></br>
+          </li>
+          <div id="projects-acc"> CONTENT </div>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link bouncy active" id="nl-skills-m" style="animation-delay:0.07s"
+              onclick="toggleVisibility('skills-acc');return false;">Skills ></a></br>
+          </li>
+          <div id="skills-acc"> CONTENT </div>
+          <li class="nav-item">
+            <a href="#about" class="nav-link bouncy active" id="nl-about-m" style="animation-delay:0.14s"
+              onclick="toggleVisibility('about-acc');return false;">About ></a></br>
+          </li>
+          <div id="about-acc"> CONTENT </div>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link bouncy active" id="nl-contact-m" style="animation-delay:0.21s"
+              onclick="toggleVisibility('contact-acc');return false;">Contact
+              ></a></br>
+          </li>
+          <div id="contact-acc"> CONTENT </div>
+          <li>
+            <div class="page-footer">
+              <div class="social-media">
+                <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
+                  <img class="icon-linkedin" id="img-link" src="img/linkedin_icon.png" alt="linkedin">
+                </a>
+                <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
+                  <img class="icon-github" id="img-link" src="img/github_icon.png" alt="github">
+                </a>
+              </div>
+            </div>
+          </li>
+        </div>
 
       </ul>
     </nav>
+
+
   </header>
 
   <!-- <div class="lava-blobs">

@@ -152,6 +152,10 @@ body {
   padding-top: 50px;
 }
 
+.mobile {
+  display: none;
+}
+
 .content {
   position: absolute;
   /* z-index: 1; */
@@ -186,6 +190,10 @@ body {
   /* z-index: 1; */
   display: none;
   /* margin-left: -5000px;  */
+}
+
+#projects-acc, #skills-acc, #about-acc, #contact-acc {
+  display: none;
 }
 
 h1 {
@@ -240,9 +248,10 @@ a:hover, a:focus {
   transition: font-size 1s;
 }
 
-.page-footer {
-  margin-top: 40px;
-}
+/* .page-footer {
+  top: 240px;
+  position: relative;
+} */
 
 .icon-linkedin {
   padding-left: 50px;
@@ -489,6 +498,14 @@ textarea {
   
   .page-header {
     margin-top: 20px;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
   }
 
   .nav-menu {
