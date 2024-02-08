@@ -35,7 +35,7 @@ TODO:
       <div class="header-section">
         <div class="logo">
           <div class="logo-icon">
-            <a id="img-link" href="#intro">
+            <a id="img-link" href="http://127.0.0.1:5500/#intro">
               <img id="img-link" class="logo"
                 src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
                 alt="Ellen Studer Logo">
@@ -63,20 +63,22 @@ TODO:
   
           <div class="nav-menu desktop">
             <li class="nav-item">
-              <a href="#projects" class="nav-link bouncy active" id="nl-projects"
+              <!-- <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects" -->
+                <!-- <a href="href=javascript:void(0)" class="nav-link bouncy active" id="nl-projects-m" -->
+                <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects"
                 onclick="toggleVisibility('projects');return false;">Work
                 ></a></br>
             </li>
             <li class="nav-item">
-              <a href="#skills" class="nav-link bouncy active" id="nl-skills" style="animation-delay:0.07s"
+              <a href="http://127.0.0.1:5500/#skills" class="nav-link bouncy active" id="nl-skills" style="animation-delay:0.07s"
                 onclick="toggleVisibility('skills');return false;">Skills ></a></br>
             </li>
             <li class="nav-item">
-              <a href="#about" class="nav-link bouncy active" id="nl-about" style="animation-delay:0.14s"
+              <a href="http://127.0.0.1:5500/#about" class="nav-link bouncy active" id="nl-about" style="animation-delay:0.14s"
                 onclick="toggleVisibility('about');return false;">About ></a></br>
             </li>
             <li class="nav-item">
-              <a href="#contact" class="nav-link bouncy active" id="nl-contact" style="animation-delay:0.21s"
+              <a href="http://127.0.0.1:5500/#contact" class="nav-link bouncy active" id="nl-contact" style="animation-delay:0.21s"
                 onclick="toggleVisibility('contact');return false;">Contact
                 ></a></br>
             </li>
@@ -96,10 +98,227 @@ TODO:
               </div>
             </li>
           </div>
+
+          <div class="profile">
+            <div class="content">
+              <div class="container">
+                <div class="projects" id="projects">
+                  <h1>Projects</h1>
+                  <div class="grid-projects">
+                    <!-- Grid items will live here-->
+                    <div class="grid__item-proj">
+                      <h2>myFlix (React)</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/myflix.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                          from your list
+                          of favorites and customize your personal data. </p>
+                        <!-- <h4>Features</h4>
+                        <ul>
+                          <li> one </li>
+                          <li> two </li>
+                          <li> three </li>
+                        </ul> -->
+                        <h4>Built with</h4>
+                        <p>React, Express, Node, MongoDB</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/myFlix-React" target="_blank">Github</a>
+                        <a href="https://getmyflix.netlify.app/" target="_blank">myFlix</a>
+                      </div>
+                    </div>
+                    <div class="grid__item-proj">
+                      <h2>myFlix (Angular)</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/myflix-angular.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                          from your list
+                          of favorites and customize your personal data. </p>
+                        <h4>Built with</h4>
+                        <p>Angular, Express, Node, MongoDB</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/myFlix-Angular" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/myFlix-Angular/welcome" target="_blank">myFlix</a>
+                      </div>
+                    </div>
+                    <div class="grid__item-proj">
+                      <h2>Meet App</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/meet.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in using your Google account to view and filter upcoming CF web development events.</p>
+                        <h4>Built with</h4>
+                        <p>React, Google Calendar API, AWS</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/meet_app" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/meet_app/" target="_blank">Meet App</a>
+                      </div>
+                    </div>
+                    <div class="grid__item-proj">
+                      <h2>Chat App</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/chat.png" alt="" style="padding-right: 10px;">
+                        <img class="proj-img" src="img/proj/chat2.png" alt="" style="padding-left: 10px;">
+                      </div>
+                      <div class="proj-description">
+                        <p> Send text messages, photos, and location; Personalize your chat screen.</p>
+                        <h4>Built with</h4>
+                        <p>React Native, Expo, Firestore, Gifted Chat</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/chat_app" target="_blank">Github</a>
+                        <!-- <a href="#">Site</a> -->
+                      </div>
+                    </div>
+                    <div class="grid__item-proj">
+                      <h2>Pokédex</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/pokedex.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p>View complete list of pokémon, click on a pokémon to view additional details.</p>
+                        <h4>Built with</h4>
+                        <!-- <p>HTML, CSS, Bootstrap, Vanilla JS, (PokeAPI)[https://pokeapi.co/]</p> -->
+                        <p>HTML, CSS, Bootstrap, Vanilla JS, <a href="https://pokeapi.co/">PokeAPI</a></p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/pokedex" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/pokedex/" target="_blank">Pokedex</a>
+                      </div>
+                    </div>
+                    <div class="grid__item-proj">
+                      <h2>To-Do List App</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/todo.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Create custom to-do lists; add, remove, and check off to-do items. </p>
+                        <h4>Built with</h4>
+                        <p>HTML, CSS, JavaScript, jQuery</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/to-do-list" target="_blank">Github</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skills" id="skills">
+                  <h1>Toolbelt</h1>
+                  <div class="grid-skills">
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/html.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/css.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/javascript.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/react.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/bootstrap.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/node.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/expressjs.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/mongodb.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/sql.png" alt="">
+                      <!-- <img class="skill_img" src="img/icon/sql.jpg" alt=""> -->
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/github.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/vscode.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/atom.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="about" id="about">
+                  <h1>About me</h1>
+        
+                  <div class="about-content">
+                    <img src="img/ellen_studer_portrait_square.jpeg" class="profile__portrait" alt="Ellen Studer Portrait">
+                    <img src="img/es_portrait_square.png" class="profile__portrait" alt="Ellen Studer Portrait">
+        
+                    <h3>
+                      Hi, I'm Ellen! I am a web developer with a background in data analytics.
+                    </h3>
+                    <div class="about-me__text">
+                      <div class="about-text">
+                        I am completing CareerFoundry’s Full Stack Web Development bootcamp (projected finish: November 2021),
+                        through which I have mastered the fundamentals of HTML, CSS, JavaScript, and React. As part of this
+                        program I have built several web apps, including a full stack web application that involved using
+                        Node.js,
+                        building an API, a MongoDB backend, and a React/ Bootstrap frontend. This and other projects are
+                        displayed
+                        above-- please take a look!
+                      </div>
+                      <div class="about-text">
+                        I have completed this program while working full-time as a Senior Research Analyst at the University of
+                        Chicago, dedicating ~25 hours per week over 8 months to learning web development on top of my full-time
+                        duties. My background as a research analyst has equipped me with a strong foundation in coding,
+                        de-bugging, and version control. I am looking to combine my love of coding, desire for more creative
+                        work,
+                        and aspiration to bolster positive causes, through a full-stack developer position.
+                      </div>
+                      <div class="about-text">
+                        Currently seeking full-time full-stack engineer positions; am also open to contract and freelance
+                        front-end, back-end, or full-stack work.
+                      </div>
+                      <div class="about-text__responsive">
+                        I am looking to combine my love of coding, desire for more creative work,
+                        and aspiration to bolster positive causes, through a full-stack developer position.
+                      </div>
+                      <div class="about-text__responsive">
+                        Currently seeking full-time full-stack engineer positions; am also open to contract and freelance
+                        front-end, back-end, or full-stack work.
+                      </div>
+                    </div>
+                    <!-- <div class="about-text">
+                    <a href="#" class="button" download>Download my CV</a>
+                  </div> -->
+                  </div>
+                </div>
+                <div class="contact" id="contact">
+                  <h1>Get in Touch</h1>
+                  <div>
+                    <form action="https://formsubmit.co/30f6b502214ba4e3131ff835a40ea087" class="contact-form" method="post">
+                      <div>
+                        <input type="text" id="input-first_name" placeholder="First name">
+                        <input type="text" id="input-last_name" placeholder="Last name">
+                        <input type="email" id="input-email" placeholder="Email">
+                        <textarea name="message" id="input-message" placeholder="Message"></textarea>
+                      </div>
+                      <input class="button" type="submit" value="Send message" id="input-submit">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
   
           <div class="nav-menu mobile">
             <li class="nav-item">
-              <a href="#projects" class="nav-link bouncy active" id="nl-projects-m"
+              <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects-m"
                 onclick="toggleVisibility('projects-acc');return false;">Work
                 ></a></br>
             </li>
@@ -217,7 +436,7 @@ TODO:
                     </div>
                     <div class="proj-links">
                       <a href="https://github.com/ellenmariestuder/chat_app" target="_blank">Github</a>
-                      <!-- <a href="#">Site</a> -->
+                      <!-- <a href="http://127.0.0.1:5500/#">Site</a> -->
                     </div>
                   </div>
   
@@ -225,7 +444,7 @@ TODO:
               </div>
             </div>
             <li class="nav-item">
-              <a href="#skills" class="nav-link bouncy active" id="nl-skills-m" style="animation-delay:0.07s"
+              <a href="http://127.0.0.1:5500/#skills" class="nav-link bouncy active" id="nl-skills-m" style="animation-delay:0.07s"
                 onclick="toggleVisibility('skills-acc');return false;">Skills ></a></br>
             </li>
             <div id="skills-acc">
@@ -274,7 +493,7 @@ TODO:
             </div>
   
             <li class="nav-item">
-              <a href="#about" class="nav-link bouncy active" id="nl-about-m" style="animation-delay:0.14s"
+              <a href="http://127.0.0.1:5500/#about" class="nav-link bouncy active" id="nl-about-m" style="animation-delay:0.14s"
                 onclick="toggleVisibility('about-acc');return false;">About ></a></br>
             </li>
             <div id="about-acc">
@@ -282,7 +501,6 @@ TODO:
                 <h1>About Me</h1>
   
                 <div class="about-content">
-                  <img src="img/es_portrait_square.png" class="profile__portrait" alt="Ellen Studer Portrait">
   
                   <h3>
                     Hi, I'm Ellen! I am a web developer with a background in data analytics.
@@ -308,7 +526,7 @@ TODO:
             </div>
   
             <li class="nav-item">
-              <a href="#contact" class="nav-link bouncy active" id="nl-contact-m" style="animation-delay:0.21s"
+              <a href="http://127.0.0.1:5500/#contact" class="nav-link bouncy active" id="nl-contact-m" style="animation-delay:0.21s"
                 onclick="toggleVisibility('contact-acc');return false;">Contact
                 ></a></br>
             </li>

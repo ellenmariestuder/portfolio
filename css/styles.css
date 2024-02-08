@@ -182,6 +182,10 @@ body {
   text-decoration: none !important;
 }
 
+#projects, #skills, #about, #contact {
+  display: none;
+}
+
 .projects, .skills, .about, .contact {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -189,6 +193,21 @@ body {
   /* z-index: 1; */
   display: none;
   /* margin-left: -5000px;  */
+}
+
+.container::-webkit-scrollbar {
+  width: 20px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #f48205;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }
 
 #projects-acc, #skills-acc, #about-acc, #contact-acc {
@@ -226,7 +245,8 @@ a:hover, a:focus {
   width: 80px;
   text-decoration: none;
   font-size: 60px;
-  color: lightgrey;
+  /* color: lightgrey; */
+  /* opacity: .5; */
   font-weight: 700;
 
   /* gradually change color (on click) */
