@@ -381,13 +381,15 @@ li {
 }
 
 .about-text {
-  display: none;
-}
-
-.about-text__responsive {
+  /* display: none; */
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* .about-text__responsive {
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */
 
 /* contact form adapted from: https://codepen.io/markmurray/pen/JsAhx/ */
 .contact-form { 
