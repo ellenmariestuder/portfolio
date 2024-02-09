@@ -596,29 +596,27 @@ TODO:
       }
 
       #lumeSceneWrapper {
-        position: absolute;
+        /* position: absolute; */
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: #050505; /* <-- MAKES ANIMATION DARKER */ 
         cursor: pointer;
+        /* z-index: 1; */
       }
-        
-        #front {
-            position: relative;
-            z-index: 1;
-        }
+
     </style>
 
-    <div id="container"></div>
-    <div id="info">
+    <div id="lume-container"></div>
+    <!-- <div id="info">
       <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a>
       - marching cubes<br />
       based on greggman's <a
         href="https://webglsamples.org/blob/blob.html">blob</a>, original code
       by Henrik Rydgård
-    </div>
+    </div> -->
 
     <div id="lumeSceneWrapper">
       <lume-scene
@@ -696,7 +694,7 @@ TODO:
 
 	const clock = new THREE.Clock()
 
-	const container = document.getElementById('container')
+	const container = document.getElementById('lume-container')
 
 	// MATERIALS
 
@@ -718,7 +716,7 @@ TODO:
 	// STATS
 
 	// const stats = new Stats()
-	// container.appendChild(stats.dom)
+	// lume-container.appendChild(stats.dom)
 
 	// GUI
 
