@@ -1,0 +1,14 @@
+{
+  "name": "ems-portfolio",
+  "version": "1.0.0",
+  "description": "portfolio website",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "html-loader": "^5.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

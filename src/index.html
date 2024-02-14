@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+This example is adapted from https://threejs.org/examples/webgl_marchingcubes.html,
+with all parts replaced with Lume elements except for the
+MarchingCubes mesh class imported from Three.js.
+
+TODO:
+- bloom filter to make the bright parts look like they are glowing, and darken the background
+- refraction for the outside glass to distort the balls floating inside the liquid (use MeshTransmissionMaterial)
+- figure out how to change the dimensions of the metaball volume, right now it
+  is 1x1x1 and we scale it vertically, but it would be nice to instead increase
+  the Y size instead of scaling, f.e. 1x3x1 so that the balls are spherical and
+  not elongated.
+- conic shaped glass instead of stretched sphere
+- top and bottom lava lamp panels, maybe even area lights on top and bottom panels
+-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=OpenSans:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="header-section">
+        <div class="logo">
+          <div class="logo-icon">
+            <a id="img-link" href="http://127.0.0.1:5500/#intro">
+              <img id="img-link" class="logo"
+                src="https://see.fontimg.com/api/renderfont4/mLWgm/eyJyIjoiZnMiLCJoIjoxMDAsInciOjEwMDAsImZzIjoxMDAsImZnYyI6IiNFQzgyMEYiLCJiZ2MiOiIjRkJGQkZCIiwidCI6MX0/RWxsZW4gU3R1ZGVy/ginchiest.png"
+                alt="Ellen Studer Logo">
+            </a>
+          </div>
+        </div>
+  
+        <div class="tagline">
+          <div class="typing"></div>
+        </div>
+  
+      </div>
+  
+      <!-- <canvas id="c"> </canvas>
+      <button id="reset">new colors</button>
+      <div id="info">
+        <div id="top">
+          <a id="close" href=""></a>
+        </div>
+      </div> -->
+  
+  
+      <nav class="navbar">
+        <ul class="nav-menu">
+  
+          <div class="nav-menu desktop">
+            <li class="nav-item">
+              <!-- <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects" -->
+                <!-- <a href="href=javascript:void(0)" class="nav-link bouncy active" id="nl-projects-m" -->
+                <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects"
+                onclick="toggleVisibility('projects');return false;">Work
+                ></a></br>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#skills" class="nav-link bouncy active" id="nl-skills" style="animation-delay:0.07s"
+                onclick="toggleVisibility('skills');return false;">Skills ></a></br>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#about" class="nav-link bouncy active" id="nl-about" style="animation-delay:0.14s"
+                onclick="toggleVisibility('about');return false;">About ></a></br>
+            </li>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#contact" class="nav-link bouncy active" id="nl-contact" style="animation-delay:0.21s"
+                onclick="toggleVisibility('contact');return false;">Contact
+                ></a></br>
+            </li>
+            <li>
+              <div class="page-footer">
+                <div class="social-media">
+                  <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
+                    <img class="icon-linkedin" id="img-link" src="img/linkedin_icon.png" alt="linkedin">
+                  </a>
+                  <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
+                    <img class="icon-github" id="img-link" src="img/github_icon.png" alt="github">
+                  </a>
+                  <a id="img-link" href="https://twitter.com/e_studer" target="_blank">
+                    <img class="icon-twitter" id="img-link" src="img/twitter_icon.png" alt="twitter">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </div>
+
+          <div class="profile">
+            <div class="content">
+              <div class="container">
+                <div class="projects" id="projects">
+                  <h1>Projects</h1>
+                  <div class="grid-projects">
+                    <!-- Grid items will live here-->
+                    <div class="grid__item-proj">
+                      <h2>myFlix (React)</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/myflix.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                          from your list
+                          of favorites and customize your personal data. </p>
+                        <!-- <h4>Features</h4>
+                        <ul>
+                          <li> one </li>
+                          <li> two </li>
+                          <li> three </li>
+                        </ul> -->
+                        <h4>Built with</h4>
+                        <p>React, Express, Node, MongoDB</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/myFlix-React" target="_blank">Github</a>
+                        <a href="https://getmyflix.netlify.app/" target="_blank">myFlix</a>
+                        <a href="myFlix Case Study.pdf" target="_blank">Case Study</a>
+                      </div>
+                    </div>
+    
+                    <div class="grid__item-proj">
+                      <h2>myFlix (Angular)</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/myflix-angular.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                          from your list
+                          of favorites and customize your personal data. </p>
+                        <h4>Built with</h4>
+                        <p>Angular, Express, Node, MongoDB</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/myFlix-Angular" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/myFlix-Angular/welcome" target="_blank">myFlix</a>
+                      </div>
+                    </div>
+    
+                    <div class="grid__item-proj">
+                      <h2>inTouch App</h2>
+                      <!-- <p>Connecting non-profits with vulnerable communities.</p> -->
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/intouch_1.PNG" alt="" style="padding-right: 10px;">
+                        <img class="proj-img" src="img/proj/intouch_3.PNG" alt="" style="padding-left: 10px;">
+                      </div>
+                      <div class="proj-description">
+                        <p>Message with clients, set up calendar appointments, keep track of fundraising goals.</p>
+                        <h4>Built with</h4>
+                        <p>React Native, Expo, Firebase, GiftedChat, Expo Calendar</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/mhyneman8/inTouch" target="_blank">Github</a>
+                        <a href="https://www.youtube.com/watch?v=PXoa7-uZvTo" target="_blank">Demo</a>
+                        <!-- <a href="https://ellenmariestuder.github.io/rising_holidaykits_2021/" target="_blank">Site</a> -->
+                      </div>
+                    </div>
+    
+                    <div class="grid__item-proj">
+                      <h2>Rising Bake Shop</h2>
+                      <h3>Landing Page</h3>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/rising_holidaykits2021.png" alt="" style="padding-right: 10px;">
+                      </div>
+                      <div class="proj-description">
+                        <p>View business and product information, submit feedback.</p>
+                        <h4>Built with</h4>
+                        <p>HTML, CSS, FormSubmit</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/rising_holidaykits_2021/" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/rising_holidaykits_2021/" target="_blank">Site</a>
+                      </div>
+                    </div>
+    
+                    <div class="grid__item-proj">
+                      <h2>Meet App</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/meet.png" alt="">
+                      </div>
+                      <div class="proj-description">
+                        <p> Log in using your Google account to view and filter upcoming CF web development events.</p>
+                        <h4>Built with</h4>
+                        <p>React, Google Calendar API, AWS</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/meet_app" target="_blank">Github</a>
+                        <a href="https://ellenmariestuder.github.io/meet_app/" target="_blank">Meet App</a>
+                      </div>
+                    </div>
+    
+                    <div class="grid__item-proj">
+                      <h2>Chat App</h2>
+                      <div class="img-container">
+                        <img class="proj-img" src="img/proj/chat.png" alt="" style="padding-right: 10px;">
+                        <img class="proj-img" src="img/proj/chat2.png" alt="" style="padding-left: 10px;">
+                      </div>
+                      <div class="proj-description">
+                        <p> Send text messages, photos, and location; Personalize your chat screen.</p>
+                        <h4>Built with</h4>
+                        <p>React Native, Expo, Firestore, Gifted Chat</p>
+                      </div>
+                      <div class="proj-links">
+                        <a href="https://github.com/ellenmariestuder/chat_app" target="_blank">Github</a>
+                        <!-- <a href="http://127.0.0.1:5500/#">Site</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="skills" id="skills">
+                  <h1>Toolbelt</h1>
+                  <div class="grid-skills">
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/html.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/css.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/javascript.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/react.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/bootstrap.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/node.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/expressjs.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/mongodb.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/sql.png" alt="">
+                      <!-- <img class="skill_img" src="img/icon/sql.jpg" alt=""> -->
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/github.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/vscode.png" alt="">
+                    </div>
+                    <div class="grid__item">
+                      <img class="skill_img" src="img/icon/atom.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="about" id="about">
+                  <h1>About me</h1>
+                  <div class="about-content">
+                    <h3>
+                      Hi, I'm Ellen! I am a web developer with a background in data analytics.
+                    </h3>
+                    <div class="about-me__text">
+                      <div class="about-text">
+                        I am completing CareerFoundry’s Full Stack Web Development bootcamp (projected finish: November 2021),
+                        through which I have mastered the fundamentals of HTML, CSS, JavaScript, and React. As part of this
+                        program I have built several web apps, including a full stack web application that involved using
+                        Node.js,
+                        building an API, a MongoDB backend, and a React/ Bootstrap frontend. This and other projects are
+                        displayed
+                        above-- please take a look!
+                      </div>
+                      <div class="about-text">
+                        I have completed this program while working full-time as a Senior Research Analyst at the University of
+                        Chicago, dedicating ~25 hours per week over 8 months to learning web development on top of my full-time
+                        duties. My background as a research analyst has equipped me with a strong foundation in coding,
+                        de-bugging, and version control. I am looking to combine my love of coding, desire for more creative
+                        work,
+                        and aspiration to bolster positive causes, through a full-stack developer position.
+                      </div>
+                      <div class="about-text">
+                        Currently seeking full-time full-stack engineer positions; am also open to contract and freelance
+                        front-end, back-end, or full-stack work.
+                      </div>
+                      <!-- <div class="about-text__responsive">
+                        I am looking to combine my love of coding, desire for more creative work,
+                        and aspiration to bolster positive causes, through a full-stack developer position.
+                      </div>
+                      <div class="about-text__responsive">
+                        Currently seeking full-time full-stack engineer positions; am also open to contract and freelance
+                        front-end, back-end, or full-stack work.
+                      </div> -->
+                    </div>
+                    <!-- <div class="about-text">
+                    <a href="#" class="button" download>Download my CV</a>
+                  </div> -->
+                  </div>
+                </div>
+                <div class="contact" id="contact">
+                  <h1>Get in Touch</h1>
+                  <div>
+                    <form action="https://formsubmit.co/30f6b502214ba4e3131ff835a40ea087" class="contact-form" method="post">
+                      <div>
+                        <input type="text" id="input-first_name" placeholder="First name">
+                        <input type="text" id="input-last_name" placeholder="Last name">
+                        <input type="email" id="input-email" placeholder="Email">
+                        <textarea name="message" id="input-message" placeholder="Message"></textarea>
+                      </div>
+                      <input class="button" type="submit" value="Send message" id="input-submit">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+  
+          <div class="nav-menu mobile">
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#projects" class="nav-link bouncy active" id="nl-projects-m"
+                onclick="toggleVisibility('projects-acc');return false;">Work
+                ></a></br>
+            </li>
+            <div id="projects-acc">
+              <div class="projects-acc">
+                <h1>Recent Projects</h1>
+  
+                <div class="grid-projects">
+                  <!-- Grid items will live here-->
+                  <div class="grid__item-proj">
+                    <h2>myFlix (React)</h2>
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/myflix.png" alt="">
+                    </div>
+                    <div class="proj-description">
+                      <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                        from your list
+                        of favorites and customize your personal data. </p>
+                      <!-- <h4>Features</h4>
+                      <ul>
+                        <li> one </li>
+                        <li> two </li>
+                        <li> three </li>
+                      </ul> -->
+                      <h4>Built with</h4>
+                      <p>React, Express, Node, MongoDB</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/ellenmariestuder/myFlix-React" target="_blank">Github</a>
+                      <a href="https://getmyflix.netlify.app/" target="_blank">myFlix</a>
+                      <a href="myFlix Case Study.pdf" target="_blank">Case Study</a>
+                    </div>
+                  </div>
+  
+                  <div class="grid__item-proj">
+                    <h2>myFlix (Angular)</h2>
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/myflix-angular.png" alt="">
+                    </div>
+                    <div class="proj-description">
+                      <p> Log in to browse movies and view movie details, such as director and genre. Add or remove movies
+                        from your list
+                        of favorites and customize your personal data. </p>
+                      <h4>Built with</h4>
+                      <p>Angular, Express, Node, MongoDB</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/ellenmariestuder/myFlix-Angular" target="_blank">Github</a>
+                      <a href="https://ellenmariestuder.github.io/myFlix-Angular/welcome" target="_blank">myFlix</a>
+                    </div>
+                  </div>
+  
+                  <div class="grid__item-proj">
+                    <h2>inTouch App</h2>
+                    <!-- <p>Connecting non-profits with vulnerable communities.</p> -->
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/intouch_1.PNG" alt="" style="padding-right: 10px;">
+                      <img class="proj-img" src="img/proj/intouch_3.PNG" alt="" style="padding-left: 10px;">
+                    </div>
+                    <div class="proj-description">
+                      <p>Message with clients, set up calendar appointments, keep track of fundraising goals.</p>
+                      <h4>Built with</h4>
+                      <p>React Native, Expo, Firebase, GiftedChat, Expo Calendar</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/mhyneman8/inTouch" target="_blank">Github</a>
+                      <a href="https://www.youtube.com/watch?v=PXoa7-uZvTo" target="_blank">Demo</a>
+                      <!-- <a href="https://ellenmariestuder.github.io/rising_holidaykits_2021/" target="_blank">Site</a> -->
+                    </div>
+                  </div>
+  
+                  <div class="grid__item-proj">
+                    <h2>Rising Bake Shop</h2>
+                    <h3>Landing Page</h3>
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/rising_holidaykits2021.png" alt="" style="padding-right: 10px;">
+                    </div>
+                    <div class="proj-description">
+                      <p>View business and product information, submit feedback.</p>
+                      <h4>Built with</h4>
+                      <p>HTML, CSS, FormSubmit</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/ellenmariestuder/rising_holidaykits_2021/" target="_blank">Github</a>
+                      <a href="https://ellenmariestuder.github.io/rising_holidaykits_2021/" target="_blank">Site</a>
+                    </div>
+                  </div>
+  
+                  <div class="grid__item-proj">
+                    <h2>Meet App</h2>
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/meet.png" alt="">
+                    </div>
+                    <div class="proj-description">
+                      <p> Log in using your Google account to view and filter upcoming CF web development events.</p>
+                      <h4>Built with</h4>
+                      <p>React, Google Calendar API, AWS</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/ellenmariestuder/meet_app" target="_blank">Github</a>
+                      <a href="https://ellenmariestuder.github.io/meet_app/" target="_blank">Meet App</a>
+                    </div>
+                  </div>
+  
+                  <div class="grid__item-proj">
+                    <h2>Chat App</h2>
+                    <div class="img-container">
+                      <img class="proj-img" src="img/proj/chat.png" alt="" style="padding-right: 10px;">
+                      <img class="proj-img" src="img/proj/chat2.png" alt="" style="padding-left: 10px;">
+                    </div>
+                    <div class="proj-description">
+                      <p> Send text messages, photos, and location; Personalize your chat screen.</p>
+                      <h4>Built with</h4>
+                      <p>React Native, Expo, Firestore, Gifted Chat</p>
+                    </div>
+                    <div class="proj-links">
+                      <a href="https://github.com/ellenmariestuder/chat_app" target="_blank">Github</a>
+                      <!-- <a href="http://127.0.0.1:5500/#">Site</a> -->
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#skills" class="nav-link bouncy active" id="nl-skills-m" style="animation-delay:0.07s"
+                onclick="toggleVisibility('skills-acc');return false;">Skills ></a></br>
+            </li>
+            <div id="skills-acc">
+              <div class="skills-acc">
+                <h1>Toolbelt</h1>
+                <div class="grid-skills">
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/html.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/css.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/javascript.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/react.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/bootstrap.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/node.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/expressjs.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/mongodb.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/sql.png" alt="">
+                    <!-- <img class="skill_img" src="img/icon/sql.jpg" alt=""> -->
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/github.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/vscode.png" alt="">
+                  </div>
+                  <div class="grid__item">
+                    <img class="skill_img" src="img/icon/atom.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#about" class="nav-link bouncy active" id="nl-about-m" style="animation-delay:0.14s"
+                onclick="toggleVisibility('about-acc');return false;">About ></a></br>
+            </li>
+            <div id="about-acc">
+              <div class="about-acc">
+                <h1>About Me</h1>
+                <div class="about-content">
+                  <h3>
+                    Hi, I'm Ellen! I am a web developer with a background in data analytics.
+                  </h3>
+                  <div class="about-me__text">
+                    <div class="about-text__responsive">
+                      I am looking to combine my love of coding, desire for more creative work,
+                      and aspiration to bolster positive causes, through a full-stack developer position.
+                    </div>
+                    <div class="about-text__responsive">
+                      Currently seeking full-time full-stack engineer positions; am also open to contract and freelance
+                      front-end, back-end, or full-stack work.
+                    </div>
+                  </div>
+                  <div class="about-text__responsive">
+                    <a href="Ellen_Studer_Resume.pdf" target="_blank" class="button" download>Download my Resume</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <li class="nav-item">
+              <a href="http://127.0.0.1:5500/#contact" class="nav-link bouncy active" id="nl-contact-m" style="animation-delay:0.21s"
+                onclick="toggleVisibility('contact-acc');return false;">Contact
+                ></a></br>
+            </li>
+            <div id="contact-acc">
+              <div class="contact-acc">
+                <h1>Get in Touch</h1>
+                <div>
+                  <form action="https://formsubmit.co/30f6b502214ba4e3131ff835a40ea087" class="contact-form"
+                    method="post">
+                    <div>
+                      <input type="text" id="input-first_name" placeholder="First name">
+                      <input type="text" id="input-last_name" placeholder="Last name">
+                      <input type="email" id="input-email" placeholder="Email">
+                      <textarea name="message" id="input-message" placeholder="Message"></textarea>
+                    </div>
+  
+                    <input class="button" type="submit" value="Send message" id="input-submit">
+                  </form>
+  
+                </div>
+              </div>
+  
+            </div>
+            <li>
+              <div class="page-footer">
+                <div class="social-media">
+                  <a id="img-link" href="https://www.linkedin.com/in/ellenstuder/" target="_blank">
+                    <img class="icon-linkedin" id="img-link" src="img/linkedin_icon.png" alt="linkedin">
+                  </a>
+                  <a id="img-link" href="https://www.github.com/ellenmariestuder" target="_blank">
+                    <img class="icon-github" id="img-link" src="img/github_icon.png" alt="github">
+                  </a>
+                  <a id="img-link" href="https://twitter.com/e_studer" target="_blank">
+                    <img class="icon-twitter" id="img-link" src="img/twitter_icon.png" alt="twitter">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </div>
+  
+        </ul>
+      </nav>
+  
+    </header>
+
+    </body>
+
+    <script src="js/app.js"></script>
+
+    <base href="https://docs.lume.io/examples/lava-lamp/example.html" />
+    <script src="https://docs.lume.io/importmap.js"></script>
+    <!-- <script src="js/importmap.js"></script> -->
+
+    <!-- <title>lava lamp</title>  -->
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> -->
+
+        <div id="lume-container"></div>
+        <!-- <div id="info">
+          <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a>
+          - marching cubes<br />
+          based on greggman's <a
+            href="https://webglsamples.org/blob/blob.html">blob</a>, original code
+          by Henrik Rydgård
+        </div> -->
+
+        <div id="lumeSceneWrapper">
+          <lume-scene
+            id="lumeScene"
+            webgl
+            background="./nasa-astrobee-robot/luna-station.jpg"
+            background-intensity="0"
+            equirectangular-background
+            environment="./nasa-astrobee-robot/luna-station.jpg">
+            <lume-ambient-light id="ambientLight" color="#7a4787"
+              intensity="10"></lume-ambient-light>
+
+            <lume-element3d align-point="0.5 0.5">
+              <lume-camera-rig
+                id="cameraRig"
+                distance="1500"
+                min-distance="1500"
+                max-distance="1500"
+                min-vertical-angle="-20"
+                max-vertical-angle="20"></lume-camera-rig>
+
+              <lume-directional-light id="light" color="#ffc700" intensity="15"
+                position="0 1000 0"></lume-directional-light>
+              <lume-directional-light id="light2" color="#ffc700" intensity="15"
+                position="0 -1000 0"></lume-directional-light>
+
+              <lume-sphere
+                receive-shadow="false"
+                size="8000 6000 6000"
+                scale="0.34 10 0.34"
+                mount-point="0.5 0.5 0.5"
+                color="orange"
+                roughness="0.4"
+                transmission="0.99"
+                ior="1.5"
+                thickness="2"
+                sidedness="back"></lume-sphere>
+            </lume-element3d>
+          </lume-scene>
+        </div>
+
+        <script type="module">
+      import {Motor} from 'https://docs.lume.io/./modules/lume/dist/index.js'
+
+      import * as THREE from 'https://docs.lume.io/./modules/three/src/Three.js'
+
+      import Stats from 'https://docs.lume.io/./modules/three/examples/jsm/libs/stats.module.js'
+
+      import {GUI} from 'https://docs.lume.io/./modules/three/examples/jsm/libs/lil-gui.module.min.js'
+      // import {OrbitControls} from 'https://docs.lume.io/./modules/three/examples/jsm/controls/OrbitControls.js'
+      import {MarchingCubes} from 'https://docs.lume.io/./modules/three/examples/jsm/objects/MarchingCubes.js'
+      import {ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted} from 'https://docs.lume.io/./modules/three/examples/jsm/shaders/ToonShader.js'
+      // import {ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted} from '/Users/ellenstuder/Desktop/personal/portfolio/js/toonshader.js'
+
+      let currentMaterial = 'liquid2'
+      let resolution = 60
+      const numBlobs = window.innerWidth <= 720 ? 5 : 10
+      cameraRig.distance = cameraRig.minDistance = cameraRig.maxDistance = window.innerWidth <= 720 ? 2000 : 1500
+
+      const effectController = {
+        material: currentMaterial,
+
+        speed: 0.2,
+        resolution,
+        isolation: 15,
+        numBlobs,
+
+        floor: false,
+        wallx: false,
+        wallz: false,
+
+        dummy: function () {},
+      }
+
+      let time = 0
+
+      const clock = new THREE.Clock()
+
+      const container = document.getElementById('lume-container')
+
+      // MATERIALS
+
+      const materials = generateMaterials()
+
+      // MARCHING CUBES
+
+      const effect = new MarchingCubes(resolution, materials[currentMaterial], true, true, 100000)
+      effect.position.set(0, 0, 0)
+      effect.scale.set(700, 1000, 700)
+
+      effect.enableUvs = false
+      effect.enableColors = false
+
+      // LUME ///////////////
+      const lumeScene = document.getElementById('lumeScene')
+      lumeScene.three.add(effect)
+
+      // STATS
+
+      // const stats = new Stats()
+      // lume-container.appendChild(stats.dom)
+
+      // GUI
+
+      setupGui()
+
+      Motor.addRenderTask(animate)
+
+      //
+
+      function generateMaterials() {
+        // environment map
+
+        // TODO use local images
+        const path = 'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/'
+        const format = '.jpg'
+        const urls = [
+          path + 'px' + format,
+          path + 'nx' + format,
+          path + 'py' + format,
+          path + 'ny' + format,
+          path + 'pz' + format,
+          path + 'nz' + format,
+        ]
+
+        // With cube map
+        const cubeTextureLoader = new THREE.CubeTextureLoader()
+        const reflectionCube = cubeTextureLoader.load(urls)
+        const refractionCube = cubeTextureLoader.load(urls)
+        refractionCube.mapping = THREE.CubeRefractionMapping
+        // With equirectangular image.
+        // const textureLoader = new THREE.TextureLoader()
+        // const refractionCube = textureLoader.load('./nasa-astrobee-robot/luna-station.jpg')
+        // refractionCube.mapping = THREE.CubeRefractionMapping
+
+        // toons
+
+        const toonMaterial1 = createShaderMaterial(ToonShader1, light.three, ambientLight.three)
+        const toonMaterial2 = createShaderMaterial(ToonShader2, light.three, ambientLight.three)
+        const hatchingMaterial = createShaderMaterial(ToonShaderHatching, light.three, ambientLight.three)
+        const dottedMaterial = createShaderMaterial(ToonShaderDotted, light.three, ambientLight.three)
+
+        // TODO use local images
+        const texture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/uv_grid_opengl.jpg')
+        texture.wrapS = THREE.RepeatWrapping
+        texture.wrapT = THREE.RepeatWrapping
+        texture.colorSpace = THREE.SRGBColorSpace
+
+        const materials = {
+          shiny: new THREE.MeshStandardMaterial({color: 0x9c0000, envMap: reflectionCube, roughness: 0.1, metalness: 1.0}),
+          chrome: new THREE.MeshLambertMaterial({color: 0xffffff, envMap: reflectionCube}),
+          liquid: new THREE.MeshLambertMaterial({color: 0xffffff, envMap: refractionCube, refractionRatio: 0.85}),
+          liquid2: new THREE.MeshPhysicalMaterial({
+            color: '#ff6500', // blood orange
+            // color: 'orange', // blood orange
+            // color: '#white', // blood orange
+            metalness: 0,
+            roughness: 0.8,
+            // envMap: refractionCube,
+            ior: 1.5,
+            transmission: 0.9,
+            thickness: 2,
+          }),
+          matte: new THREE.MeshPhongMaterial({specular: 0x494949, shininess: 1}),
+          flat: new THREE.MeshLambertMaterial({
+            /*TODO flatShading: true */
+          }),
+          textured: new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, shininess: 1, map: texture}),
+          colors: new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0xffffff, shininess: 2, vertexColors: true}),
+          multiColors: new THREE.MeshPhongMaterial({shininess: 2, vertexColors: true}),
+          plastic: new THREE.MeshPhongMaterial({specular: 0xc1c1c1, shininess: 250}),
+          toon1: toonMaterial1,
+          toon2: toonMaterial2,
+          hatching: hatchingMaterial,
+          dotted: dottedMaterial,
+        }
+
+        return materials
+      }
+
+      function createShaderMaterial(shader, threeLight, threeAmbient) {
+        const u = THREE.UniformsUtils.clone(shader.uniforms)
+
+        const vs = shader.vertexShader
+        const fs = shader.fragmentShader
+
+        const material = new THREE.ShaderMaterial({uniforms: u, vertexShader: vs, fragmentShader: fs})
+
+        material.uniforms['uDirLightPos'].value = threeLight.position
+        material.uniforms['uDirLightColor'].value = threeLight.color
+
+        material.uniforms['uAmbientLightColor'].value = threeAmbient.color
+
+        return material
+      }
+
+      //
+
+      function setupGui() {
+        const createHandler = function (id) {
+          return function () {
+            currentMaterial = id
+
+            effect.material = materials[id]
+            effect.enableUvs = currentMaterial === 'textured' ? true : false
+            effect.enableColors = currentMaterial === 'colors' || currentMaterial === 'multiColors' ? true : false
+          }
+        }
+
+        // Initial
+        createHandler(currentMaterial)()
+
+        let h
+
+        const gui = new GUI()
+
+        // material (type)
+
+        h = gui.addFolder('Materials')
+
+        for (const m in materials) {
+          effectController[m] = createHandler(m)
+          h.add(effectController, m).name(m)
+        }
+
+        // simulation
+
+        h = gui.addFolder('Simulation')
+
+        h.add(effectController, 'speed', 0.1, 8.0, 0.05)
+        h.add(effectController, 'numBlobs', 1, 50, 1)
+        h.add(effectController, 'resolution', 14, 100, 1)
+        h.add(effectController, 'isolation', 10, 300, 1)
+
+        h.add(effectController, 'floor')
+        h.add(effectController, 'wallx')
+        h.add(effectController, 'wallz')
+      }
+
+      // this controls content of marching cubes voxel field
+
+      function updateCubes(object, time, numblobs, floor, wallx, wallz) {
+        object.reset()
+
+        // fill the field with some metaballs
+
+        const rainbow = [
+          new THREE.Color(0xff0000),
+          new THREE.Color(0xffbb00),
+          new THREE.Color(0xffff00),
+          new THREE.Color(0x00ff00),
+          new THREE.Color(0x0000ff),
+          new THREE.Color(0x9400bd),
+          new THREE.Color(0xc800eb),
+        ]
+        const subtract = 12
+        const strength = 1.2 / ((Math.sqrt(numblobs) - 1) / 4 + 1)
+
+        for (let i = 0; i < numblobs; i++) {
+          const ballx = Math.sin(i + 1.26 * time * (1.03 + 0.5 * Math.cos(0.21 * i))) * 0.27 + 0.5
+          const bally = Math.abs(Math.cos(i + 1.12 * time * Math.cos(1.22 + 0.1424 * i))) * 0.77 // dip into the floor
+          const ballz = Math.cos(i + 1.32 * time * 0.1 * Math.sin(0.92 + 0.53 * i)) * 0.27 + 0.5
+
+          if (currentMaterial === 'multiColors') {
+            object.addBall(ballx, bally, ballz, strength, subtract, rainbow[i % 7])
+          } else {
+            object.addBall(ballx, bally, ballz, strength, subtract)
+          }
+        }
+
+        if (floor) object.addPlaneY(2, 12)
+        if (wallz) object.addPlaneZ(2, 12)
+        if (wallx) object.addPlaneX(2, 12)
+
+        object.update()
+      }
+
+      //
+
+      function animate() {
+        update()
+        // stats.update()
+        lumeScene.needsUpdate() // Notify that Lume scene should redraw
+      }
+
+      function update() {
+        const delta = clock.getDelta()
+
+        time += delta * effectController.speed * 0.5
+
+        // marching cubes
+
+        if (effectController.resolution !== resolution) {
+          resolution = effectController.resolution
+          effect.init(Math.floor(resolution))
+        }
+
+        if (effectController.isolation !== effect.isolation) {
+          effect.isolation = effectController.isolation
+        }
+
+        updateCubes(
+          effect,
+          time,
+          effectController.numBlobs,
+          effectController.floor,
+          effectController.wallx,
+          effectController.wallz,
+        )
+      }
+    </script>
