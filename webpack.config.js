@@ -1,3 +1,24 @@
+// module.exports = {
+//   entry: './src/js/app.js', // Adjust the entry point to your main JavaScript file
+//   output: {
+//     filename: 'bundle.js',
+//   },
+//   module: {
+//     rules: [
+//       {
+//         test: /\.js$/,
+//         exclude: /node_modules/,
+//         use: {
+//           loader: 'babel-loader',
+//           options: {
+//             presets: ['@babel/preset-env'],
+//           },
+//         },
+//       },
+//     ],
+//   },
+// };
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
