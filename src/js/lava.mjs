@@ -2,20 +2,10 @@
 // import(/* webpackIgnore: true */ 'https://docs.lume.io/modules/three/src/Three.js').then(module => console.log(module.default));
 
 import {Motor} from 'lume';
-// import {Motor} from '../../node_modules/lume/src/core/Motor';
-import * as THREE from "three";
-// import {GUI} from "three-addons";
-// import {MarchingCubes} from "three-addons";
-// import {ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted} from "three-addons";
-// import * as THREE from "https://docs.lume.io/modules/three/src/Three.js";
-// import {GUI} from "https://docs.lume.io/modules/three/examples/jsm/libs/lil-gui.module.min.js";
-// import {MarchingCubes} from "https://docs.lume.io/modules/three/examples/jsm/objects/MarchingCubes.js";
-// import {ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted} from "https://docs.lume.io/modules/three/examples/jsm/shaders/ToonShader.js";
+import * as THREE from "three";;
 import {GUI} from "three/addons/libs/lil-gui.module.min.js";
 import {MarchingCubes} from "three/addons/objects/MarchingCubes.js";
 import {ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted} from "three/addons/shaders/ToonShader.js";
-// // import Stats from "https://docs.lume.io/modules/three/examples/jsm/libs/stats.module.js";
-// // import {OrbitControls} from "https://docs.lume.io/modules/three/examples/jsm/controls/OrbitControls.js";
 
 let currentMaterial = 'liquid2'
 let resolution = 60
