@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "lume": "^0.3.0-alpha.39",
-    "three": "^0.161.0"
+    "three": "^0.161.0",
+    "three-addons": "^1.2.0"
   }
 }
