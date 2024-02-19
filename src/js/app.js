@@ -23,6 +23,7 @@ let letter = '';
 ////////////////////////////////////////////////////////////////////////
 // show/ hide content to right of menu on button click 
 // (for desktop-size screens)
+// const container = ".container"
 var divs = ["projects", "skills", "about", "contact"];
 var divsAcc = ["projects-acc", "skills-acc", "about-acc", "contact-acc"];
 var visibleDivId = null;
@@ -62,6 +63,8 @@ function toggleVisibility(divId) {
 }
 
 function setActiveClass(elem) {
+  container = document.getElementById('container')
+  container.classList.remove("hide")
   for (i = 0; i < navLinks.length; i++) {
     // remove active class from everything else
     navLinks[i].classList.remove("active");
