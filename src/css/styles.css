@@ -180,12 +180,6 @@ body {
   display: none;
 }
 
-.content {
-  /* position: absolute; */
-  position: relative;
-  z-index: 1;
-}
-
 .container {
   top: 135px;
   left: 150px; 
