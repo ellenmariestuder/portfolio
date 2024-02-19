@@ -594,7 +594,11 @@ textarea {
   }
   
   .nav-link {
-    font-size: 30px;
+    font-size: 25px;
+  }
+
+  .nav-item {
+    max-width: 235px;
   }
 
   .active {
