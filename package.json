@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lume": "^0.3.0-alpha.39",
+    "three": "^0.161.0"
+  }
+}
