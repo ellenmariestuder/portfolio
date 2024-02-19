@@ -199,6 +199,10 @@ body {
 
 }
 
+.hide {
+  display: none;
+}
+
 .intro {
   padding-top: 3px;
 }
@@ -590,7 +594,11 @@ textarea {
   }
   
   .nav-link {
-    font-size: 30px;
+    font-size: 25px;
+  }
+
+  .nav-item {
+    max-width: 235px;
   }
 
   .active {
