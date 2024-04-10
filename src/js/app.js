@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////
 // https://www.youtube.com/watch?v=PuOGBacTYAY&list=PLedShyskP4x-OsGdBEZ6m5tmr5qxpWn6D&index=7&t=1131s
 
-const text = ['Full-stack web developer'];
+const text = ['Software Engineer'];
 let count = 0;
 let index = 0;
 let currentText = '';
